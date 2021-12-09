@@ -5,9 +5,7 @@ import time
 import random
 
 pos = mc.player.getTilePos()
-x=pos.x
-y=pos.y
-z=pos.z
+x,y,z=pos.x,pos.y,pos.z
 
 
 while True:
