@@ -13,7 +13,7 @@ def setPillar(x,y,z,height):
     mc.setBlock(x,y+height-1,z-1,stairBlock,14)
     
     #Pillar base
-    mc.setBlocks(x-1,y+height,z-1,x+1,y+height,z+1,block,1)
+    mc.setBlocks(x-1,y,z-1,x+1,y,z+1,block,1)
     mc.setBlock(x-1,y+1,z,stairBlock,0)
     mc.setBlock(x+1,y+1,z,stairBlock,1)
     mc.setBlock(x,y+1,z+1,stairBlock,3)
@@ -22,9 +22,9 @@ def setPillar(x,y,z,height):
     #Pillar column
     mc.setBlocks(x,y,z,x,y+height,z,block,2)
     
-pos=mc.player.getTilePos()
-x,y,z=pos.x+2,pos.y,pos.z
 
 for i in range (3,9):
-    setPillar(x,y,z,i)
+    pos=mc.player.getTilePos()
+    x,y,z=pos.x+2,pos.y,pos.z
+    setPillar(x,y,z,10)
     time.sleep(5)
