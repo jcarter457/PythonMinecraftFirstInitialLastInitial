@@ -3,5 +3,4 @@ mc=Minecraft.create()
 
 toDoList=open("toDo.txt","r")
 
-for line in toDoList:
-    mc.postToChat(toDoList.readline())
+mc.postToChat(toDoList.read())
