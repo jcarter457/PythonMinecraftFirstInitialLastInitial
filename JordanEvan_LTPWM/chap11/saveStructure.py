@@ -1,6 +1,7 @@
 from mcpi.minecraft import Minecraft
 mc=Minecraft.create()
-import pickle
+from pickle import *
+savestructure=open("structuresave.txt","wb")
 
 def sortPair(val1,val2):
     if val1 > val2:
@@ -28,3 +29,21 @@ def copyStructure(x1,y1,z1,x2,y2,z2):
                 block=mc.getBlock(x1+column,y1+row,z1+depth)
                 structure[row][column].append(block)
     return structure
+
+input("Move to the first position and press ENTER in this window")
+pos1=mc.player.getTilePos()
+
+x1=pos1.x
+y1=pos1.y
+z1=pos1.z
+
+input("Move to the opposite corner and press ENTER in this window")
+pos2=mc.player.getTilePos()
+
+x2=pos2.x
+y2=pos2.y
+z2=pos2.z
+
+structure = copyStructure(x1,y1,z1,x2,y2,z2)
+
+dump(structure,savestructure)
