@@ -2,8 +2,10 @@ from mcpi.minecraft import Minecraft
 mc = Minecraft.create()
 
 class location(object):
-    def _init_(self,x,y,z):
+    def __init__(self,x,y,z):
         self.x = x
+        self.y = y
+        self.z = z
         
         
 bedroom = location(64,52, -8)
